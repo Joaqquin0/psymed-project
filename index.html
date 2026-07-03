@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Psymed</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,sans-serif;background:#141E24;display:flex;align-items:center;justify-content:center;min-height:100vh;color:#fff}
+    .wrap{text-align:center;max-width:600px;padding:40px}
+    .logo{display:inline-flex;align-items:center;gap:14px;margin-bottom:10px}
+    .logo-i{width:52px;height:52px;border-radius:14px;background:#0E7C86;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700}
+    .logo-t{font-size:34px;font-weight:800;letter-spacing:-.5px}
+    .sub{font-size:15px;color:#7C93A0;margin-bottom:44px}
+    .roles{display:flex;gap:20px;justify-content:center}
+    .card{flex:1;max-width:260px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:32px 24px;text-decoration:none;color:#fff;transition:all .2s;cursor:pointer}
+    .card:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);transform:translateY(-2px)}
+    .card-i{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+    .card-i.d{background:rgba(14,124,134,.2)}
+    .card-i.p{background:rgba(180,99,42,.2)}
+    .card h2{font-size:18px;font-weight:800;margin-bottom:6px}
+    .card p{font-size:12.5px;color:#7C93A0;line-height:1.5}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="logo"><div class="logo-i">+</div><span class="logo-t">Psymed</span></div>
+    <div class="sub">Gestión de pacientes · Selecciona tu rol</div>
+    <div class="roles">
+      <a href="doctor/login.html" class="card">
+        <div class="card-i d"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0E7C86" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <h2>Doctor</h2><p>Pacientes, agenda, historia clínica, asistente IA.</p>
+      </a>
+      <a href="paciente/login.html" class="card">
+        <div class="card-i p"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#B4632A" stroke-width="2" stroke-linecap="round"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg></div>
+        <h2>Paciente</h2><p>Mi agenda, reporte diario, citas.</p>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

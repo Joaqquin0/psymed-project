@@ -1,0 +1,100 @@
+/* psymed.css — Hoja de estilos compartida para todas las pantallas PsyMed */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { height: 100%; }
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  animation: psyFadeIn .18s ease-out;
+}
+
+@keyframes psyFadeIn {
+  from { opacity: 0; transform: translateY(3px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Fondos por contexto ── */
+body.bg-dark    { background: #141E24; display: flex; align-items: center; justify-content: center; }
+body.bg-white   { background: #F4F7F9; display: block; }
+body.bg-patient { background: #FBF8F5; display: block; }
+body.bg-app     { background: #FAFCFD; display: block; }
+
+/* ── Wrapper raíz del body ── */
+body > div {
+  width: 100%;
+}
+
+/* Para pantallas de login (bg-dark): centrar la tarjeta */
+body.bg-dark > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ── Contenedor principal de la pantalla ── */
+
+/* Login: mantener aspecto de tarjeta centrada con tamaño razonable */
+body.bg-dark > div > div {
+  width: 100% !important;
+  max-width: 1040px !important;
+  border-radius: 16px !important;
+  box-shadow: 0 22px 48px -16px rgba(5, 22, 28, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.04) !important;
+}
+
+/* Login: el panel interior no colapsar la altura */
+body.bg-dark > div > div > div[style*="height:"] {
+  height: auto !important;
+  min-height: 560px !important;
+}
+
+/* App screens: sin máximo, sin bordes redondeados, pantalla completa */
+body.bg-white > div > div,
+body.bg-patient > div > div,
+body.bg-app > div > div {
+  width: 100% !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* ── Navbar fija en la parte superior (siempre a 56px) ── */
+body.bg-white > div > div > div:first-child[style*="height:56px"],
+body.bg-patient > div > div > div:first-child[style*="height:56px"],
+body.bg-app > div > div > div:first-child[style*="height:56px"] {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ── Área de contenido: expandir al viewport minus navbar ── */
+body.bg-white > div > div > div:nth-child(2),
+body.bg-patient > div > div > div:nth-child(2),
+body.bg-app > div > div > div:nth-child(2) {
+  height: auto !important;
+  min-height: calc(100vh - 56px) !important;
+  overflow: visible !important;
+}
+
+/* Los paneles laterales con altura fija también se expanden */
+body.bg-white > div > div > div:nth-child(2) > div,
+body.bg-patient > div > div > div:nth-child(2) > div {
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: visible !important;
+}
+
+/* ── Scrollbar discreta ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,.15); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,.28); }
+
+/* ── Cursor pointer para elementos interactivos ── */
+[style*="cursor:pointer"] {
+  user-select: none;
+}

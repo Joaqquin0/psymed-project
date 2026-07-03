@@ -1,0 +1,13 @@
+# Ignorar los archivos de mockup standalone (muy grandes, solo para referencia)
+psymed Mockups (Standalone).html
+template_out.html
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
