@@ -98,3 +98,133 @@ body.bg-patient > div > div > div:nth-child(2) > div {
 [style*="cursor:pointer"] {
   user-select: none;
 }
+
+/* ── Inputs interactivos ── */
+.psy-input {
+  display: block;
+  width: 100%;
+  height: 46px;
+  border: 1.5px solid #DCE4E7;
+  border-radius: 11px;
+  padding: 0 14px;
+  color: #16242B;
+  font-size: 13.5px;
+  font-family: inherit;
+  background: #fff;
+  outline: none;
+  transition: border-color .18s, box-shadow .18s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.psy-input:focus {
+  border-color: #0E7C86;
+  box-shadow: 0 0 0 3px rgba(14,124,134,.12);
+}
+.psy-input::placeholder { color: #9DB0BA; }
+.psy-input-sm { height: 42px; font-size: 13px; border-radius: 10px; }
+.psy-input-lg { height: 50px; font-size: 14px; }
+
+/* Inputs de paciente (naranja) */
+.psy-input-patient:focus {
+  border-color: #D9803F;
+  box-shadow: 0 0 0 3px rgba(217,128,63,.12);
+}
+
+/* Textarea */
+.psy-textarea {
+  width: 100%;
+  border: 1.5px solid #DCE4E7;
+  border-radius: 12px;
+  padding: 12px 14px;
+  color: #3E535D;
+  font-size: 13.5px;
+  font-family: inherit;
+  background: #fff;
+  outline: none;
+  resize: none;
+  line-height: 1.5;
+  transition: border-color .18s, box-shadow .18s;
+}
+.psy-textarea:focus {
+  border-color: #0E7C86;
+  box-shadow: 0 0 0 3px rgba(14,124,134,.12);
+}
+
+/* Wrapper de password (input + ojo) */
+.psy-pw-wrap {
+  position: relative;
+  margin-bottom: 0;
+}
+.psy-pw-wrap .psy-input { padding-right: 44px; letter-spacing: 0; }
+.psy-pw-toggle {
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9DB0BA;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.psy-pw-toggle:hover { color: #5C6E78; }
+
+/* Mood selector */
+.psy-mood-option {
+  cursor: pointer;
+  transition: transform .15s, box-shadow .15s, border-color .15s, background .15s;
+  user-select: none;
+}
+.psy-mood-option:hover { transform: translateY(-2px); }
+.psy-mood-option.selected {
+  border-color: #D9803F !important;
+  background: #FBEEDE !important;
+  box-shadow: 0 4px 12px rgba(217,128,63,.2);
+}
+
+/* Range slider (reporte) */
+input[type="range"].psy-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 4px;
+  background: #F0E7DF;
+  outline: none;
+  cursor: pointer;
+}
+input[type="range"].psy-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #D9803F;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0,0,0,.15);
+  transition: transform .12s;
+}
+input[type="range"].psy-slider::-webkit-slider-thumb:hover { transform: scale(1.15); }
+input[type="range"].psy-slider::-moz-range-thumb {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #D9803F;
+  cursor: pointer;
+}
+
+/* Chat composer */
+.psy-chat-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-family: inherit;
+  color: #3E535D;
+  background: transparent;
+}
+.psy-chat-input::placeholder { color: #9DB0BA; }
+

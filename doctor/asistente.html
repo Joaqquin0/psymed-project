@@ -56,9 +56,9 @@
                       <div style="display:flex;align-items:center;gap:10px;background:#FBF1DC;border:1px solid #F0DDB0;border-radius:10px;padding:10px 12px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#9A6B16" stroke-width="2" style="flex:none"><path d="M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"></path><path d="M12 9v4M12 17h.01"></path></svg><span style="font-size:12.5px;color:#7A551A;line-height:1.4"><b>Energía baja (2/5)</b> y reportada a la baja 3 de los últimos 5 días.</span></div>
                     </div>
                     <div style="display:flex;gap:8px;margin-top:13px;flex-wrap:wrap">
-                      <span style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:#0A5C64;background:#E6F2F3;border:1px solid #CCE5E7;border-radius:9px;padding:7px 12px">Ver ficha completa</span>
-                      <span style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:#0A5C64;background:#E6F2F3;border:1px solid #CCE5E7;border-radius:9px;padding:7px 12px">Revisar medicación</span>
-                      <span style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:#0A5C64;background:#E6F2F3;border:1px solid #CCE5E7;border-radius:9px;padding:7px 12px">Agendar cita</span>
+                      <span data-nav="ficha.html" style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:#0A5C64;background:#E6F2F3;border:1px solid #CCE5E7;border-radius:9px;padding:7px 12px">Ver ficha completa</span>
+                      <span data-nav="medicacion.html" style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:#0A5C64;background:#E6F2F3;border:1px solid #CCE5E7;border-radius:9px;padding:7px 12px">Revisar medicación</span>
+                      <span data-nav="citas.html" style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:#0A5C64;background:#E6F2F3;border:1px solid #CCE5E7;border-radius:9px;padding:7px 12px">Agendar cita</span>
                     </div>
                   </div>
                 </div>
@@ -70,10 +70,10 @@
                   <span style="font-size:12px;font-weight:600;color:#3E535D;border:1px solid #DCE4E7;border-radius:999px;padding:6px 13px">Adherencia a la medicación</span>
                   <span style="font-size:12px;font-weight:600;color:#3E535D;border:1px solid #DCE4E7;border-radius:999px;padding:6px 13px">Redactar nota clínica</span>
                 </div>
-                <div style="display:flex;align-items:center;gap:12px;border:1px solid #DCE4E7;border-radius:13px;padding:8px 8px 8px 16px;background:#fff">
+                <div style="display:flex;align-items:center;gap:12px;border:1.5px solid #DCE4E7;border-radius:13px;padding:8px 8px 8px 16px;background:#fff;transition:border-color .18s" onfocusin="this.style.borderColor='#0E7C86';this.style.boxShadow='0 0 0 3px rgba(14,124,134,.1)'" onfocusout="this.style.borderColor='#DCE4E7';this.style.boxShadow=''">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9DB0BA" stroke-width="2" style="flex:none"><path d="M21.4 11.05l-8.5 8.5a5 5 0 01-7-7l8.5-8.5a3.3 3.3 0 014.7 4.7l-8.5 8.5a1.6 1.6 0 01-2.3-2.3l7.8-7.8"></path></svg>
-                  <span style="flex:1;font-size:14px;color:#9DB0BA">Pregunta sobre un paciente, su evolución, riesgos…</span>
-                  <span style="width:40px;height:40px;border-radius:10px;background:#0E7C86;display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 8px 16px -6px rgba(14,124,134,.5)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg></span>
+                  <input id="chat-inp" class="psy-chat-input" type="text" placeholder="Pregunta sobre un paciente, su evolución, riesgos…" onkeydown="if(event.key==='Enter')document.getElementById('chat-send').click()">
+                  <span id="chat-send" style="width:40px;height:40px;border-radius:10px;background:#0E7C86;display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 8px 16px -6px rgba(14,124,134,.5);cursor:pointer;transition:opacity .15s" onclick="(function(){var v=document.getElementById('chat-inp').value.trim();if(v){document.getElementById('chat-inp').value='';}})()"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg></span>
                 </div>
                 <div style="font-size:11px;color:#A6B5BD;text-align:center;margin-top:9px">El asistente puede cometer errores. Verifica la información clínica antes de actuar.</div>
               </div>

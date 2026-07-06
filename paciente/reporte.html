@@ -18,35 +18,79 @@
             <div style="display:flex;gap:3px;margin-left:6px"><span style="padding:7px 13px;border-radius:9px;background:#FBEEDE;color:#B4632A;font-weight:700;font-size:13px">Inicio</span><span style="padding:7px 13px;border-radius:9px;color:#5C6E78;font-weight:600;font-size:13px">Mis Citas</span><span style="padding:7px 13px;border-radius:9px;color:#5C6E78;font-weight:600;font-size:13px">Terapia</span></div>
             <div style="margin-left:auto;display:flex;align-items:center;gap:12px"><span style="width:34px;height:34px;border-radius:9px;background:#F4F7F9;border:1px solid #EAEFF1;display:flex;align-items:center;justify-content:center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#5C6E78" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5.5 5.5l2 2M16.5 16.5l2 2M18.5 5.5l-2 2M7.5 16.5l-2 2"></path></svg></span><span style="width:34px;height:34px;border-radius:50%;background:#D9803F;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px">PP</span></div>
           </div>
-          <div style="height:600px;padding:28px 32px;background:#FBF8F5">
+          <div style="min-height:600px;padding:28px 32px;background:#FBF8F5">
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px"><div style="font-size:22px;font-weight:800">Reporte diario</div><span style="display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;color:#1F7A53;background:#E4F4EC;border-radius:999px;padding:6px 13px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F7A53" stroke-width="2"><path d="M4 12l1.5 1.5L9 10M3 6h13M3 18h7"></path></svg>Se sincroniza con tu doctor</span></div>
             <div style="font-size:13px;color:#93857A;margin-bottom:22px">Cuéntanos cómo te encuentras hoy, jueves 15 de junio</div>
             <div style="display:flex;gap:22px">
               <div style="flex:1;background:#fff;border:1px solid #EFE6DE;border-radius:16px;padding:24px">
                 <div style="font-weight:700;font-size:15px;margin-bottom:18px">¿Cómo te sientes hoy?</div>
-                <div style="display:flex;gap:12px;justify-content:space-between">
-                  <div style="flex:1;text-align:center;padding:14px 0;border-radius:13px;border:1px solid #EFE6DE"><div style="font-size:30px">😣</div><div style="font-size:11px;color:#93857A;margin-top:5px">Muy mal</div></div>
-                  <div style="flex:1;text-align:center;padding:14px 0;border-radius:13px;border:1px solid #EFE6DE"><div style="font-size:30px">🙁</div><div style="font-size:11px;color:#93857A;margin-top:5px">Mal</div></div>
-                  <div style="flex:1;text-align:center;padding:14px 0;border-radius:13px;border:1px solid #EFE6DE"><div style="font-size:30px">😐</div><div style="font-size:11px;color:#93857A;margin-top:5px">Neutral</div></div>
-                  <div style="flex:1;text-align:center;padding:14px 0;border-radius:13px;border:2px solid #D9803F;background:#FBEEDE"><div style="font-size:30px">🙂</div><div style="font-size:11px;color:#B4632A;font-weight:700;margin-top:5px">Bien</div></div>
-                  <div style="flex:1;text-align:center;padding:14px 0;border-radius:13px;border:1px solid #EFE6DE"><div style="font-size:30px">😄</div><div style="font-size:11px;color:#93857A;margin-top:5px">Genial</div></div>
+                <div id="mood-grid" style="display:flex;gap:12px;justify-content:space-between">
+                  <div class="psy-mood-option" data-mood="0" style="flex:1;text-align:center;padding:14px 0;border-radius:13px;border:1px solid #EFE6DE"><div style="font-size:30px">😣</div><div style="font-size:11px;color:#93857A;margin-top:5px">Muy mal</div></div>
+                  <div class="psy-mood-option" data-mood="1" style="flex:1;text-align:center;padding:14px 0;border-radius:13px;border:1px solid #EFE6DE"><div style="font-size:30px">🙁</div><div style="font-size:11px;color:#93857A;margin-top:5px">Mal</div></div>
+                  <div class="psy-mood-option" data-mood="2" style="flex:1;text-align:center;padding:14px 0;border-radius:13px;border:1px solid #EFE6DE"><div style="font-size:30px">😐</div><div style="font-size:11px;color:#93857A;margin-top:5px">Neutral</div></div>
+                  <div class="psy-mood-option selected" data-mood="3" style="flex:1;text-align:center;padding:14px 0;border-radius:13px;border:2px solid #D9803F;background:#FBEEDE"><div style="font-size:30px">🙂</div><div style="font-size:11px;color:#B4632A;font-weight:700;margin-top:5px">Bien</div></div>
+                  <div class="psy-mood-option" data-mood="4" style="flex:1;text-align:center;padding:14px 0;border-radius:13px;border:1px solid #EFE6DE"><div style="font-size:30px">😄</div><div style="font-size:11px;color:#93857A;margin-top:5px">Genial</div></div>
                 </div>
-                <div style="margin-top:22px"><label style="display:block;font-size:13px;font-weight:600;color:#3E535D;margin:0 0 8px">¿Quieres añadir algo?</label><div style="height:74px;border:1px solid #DCE4E7;border-radius:12px;padding:12px 14px;color:#3E535D;font-size:13.5px;line-height:1.5">Me siento más tranquilo esta semana, dormí mejor.</div></div>
+                <div style="margin-top:22px"><label style="display:block;font-size:13px;font-weight:600;color:#3E535D;margin:0 0 8px">¿Quieres añadir algo?</label>
+                <textarea class="psy-textarea psy-textarea-patient" rows="3" style="border-color:#EFE6DE">Me siento más tranquilo esta semana, dormí mejor.</textarea></div>
               </div>
               <div style="width:380px;flex:none;background:#fff;border:1px solid #EFE6DE;border-radius:16px;padding:24px">
                 <div style="font-weight:700;font-size:15px;margin-bottom:4px">Funciones biológicas</div>
                 <div style="font-size:12px;color:#93857A;margin-bottom:18px">Puntúa del 1 al 5</div>
-                <div style="margin-bottom:18px"><div style="display:flex;justify-content:space-between;margin-bottom:8px"><span style="font-size:13px;font-weight:600;color:#3E535D">Hambre</span><span style="font-size:12px;color:#B4632A;font-weight:700">3 / 5</span></div><div style="height:6px;background:#F0E7DF;border-radius:4px;position:relative"><div style="position:absolute;left:0;top:0;bottom:0;width:60%;background:#D9803F;border-radius:4px"></div><div style="position:absolute;left:60%;top:50%;transform:translate(-50%,-50%);width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid #D9803F"></div></div></div>
-                <div style="margin-bottom:18px"><div style="display:flex;justify-content:space-between;margin-bottom:8px"><span style="font-size:13px;font-weight:600;color:#3E535D">Sueño</span><span style="font-size:12px;color:#B4632A;font-weight:700">4 / 5</span></div><div style="height:6px;background:#F0E7DF;border-radius:4px;position:relative"><div style="position:absolute;left:0;top:0;bottom:0;width:80%;background:#D9803F;border-radius:4px"></div><div style="position:absolute;left:80%;top:50%;transform:translate(-50%,-50%);width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid #D9803F"></div></div></div>
-                <div style="margin-bottom:18px"><div style="display:flex;justify-content:space-between;margin-bottom:8px"><span style="font-size:13px;font-weight:600;color:#3E535D">Energía</span><span style="font-size:12px;color:#B4632A;font-weight:700">2 / 5</span></div><div style="height:6px;background:#F0E7DF;border-radius:4px;position:relative"><div style="position:absolute;left:0;top:0;bottom:0;width:40%;background:#D9803F;border-radius:4px"></div><div style="position:absolute;left:40%;top:50%;transform:translate(-50%,-50%);width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid #D9803F"></div></div></div>
-                <div style="margin-bottom:26px"><div style="display:flex;justify-content:space-between;margin-bottom:8px"><span style="font-size:13px;font-weight:600;color:#3E535D">Hidratación</span><span style="font-size:12px;color:#B4632A;font-weight:700">5 / 5</span></div><div style="height:6px;background:#F0E7DF;border-radius:4px;position:relative"><div style="position:absolute;left:0;top:0;bottom:0;width:100%;background:#D9803F;border-radius:4px"></div><div style="position:absolute;left:100%;top:50%;transform:translate(-50%,-50%);width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid #D9803F"></div></div></div>
-                <div style="height:48px;border-radius:11px;background:#D9803F;color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 9px 18px -6px rgba(217,128,63,.5)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg>Enviar reporte</div>
+
+                <div style="margin-bottom:20px">
+                  <div style="display:flex;justify-content:space-between;margin-bottom:8px"><span style="font-size:13px;font-weight:600;color:#3E535D">Hambre</span><span id="lbl-hambre" style="font-size:12px;color:#B4632A;font-weight:700">3 / 5</span></div>
+                  <input id="sl-hambre" type="range" class="psy-slider" min="1" max="5" value="3" oninput="document.getElementById('lbl-hambre').textContent=this.value+' / 5';updateSliderBg(this)">
+                </div>
+                <div style="margin-bottom:20px">
+                  <div style="display:flex;justify-content:space-between;margin-bottom:8px"><span style="font-size:13px;font-weight:600;color:#3E535D">Sueño</span><span id="lbl-sueno" style="font-size:12px;color:#B4632A;font-weight:700">4 / 5</span></div>
+                  <input id="sl-sueno" type="range" class="psy-slider" min="1" max="5" value="4" oninput="document.getElementById('lbl-sueno').textContent=this.value+' / 5';updateSliderBg(this)">
+                </div>
+                <div style="margin-bottom:20px">
+                  <div style="display:flex;justify-content:space-between;margin-bottom:8px"><span style="font-size:13px;font-weight:600;color:#3E535D">Energía</span><span id="lbl-energia" style="font-size:12px;color:#B4632A;font-weight:700">2 / 5</span></div>
+                  <input id="sl-energia" type="range" class="psy-slider" min="1" max="5" value="2" oninput="document.getElementById('lbl-energia').textContent=this.value+' / 5';updateSliderBg(this)">
+                </div>
+                <div style="margin-bottom:26px">
+                  <div style="display:flex;justify-content:space-between;margin-bottom:8px"><span style="font-size:13px;font-weight:600;color:#3E535D">Hidratación</span><span id="lbl-hidrat" style="font-size:12px;color:#B4632A;font-weight:700">5 / 5</span></div>
+                  <input id="sl-hidrat" type="range" class="psy-slider" min="1" max="5" value="5" oninput="document.getElementById('lbl-hidrat').textContent=this.value+' / 5';updateSliderBg(this)">
+                </div>
+
+                <div data-nav="agenda.html" style="height:48px;border-radius:11px;background:#D9803F;color:#fff;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 9px 18px -6px rgba(217,128,63,.5)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg>Enviar reporte</div>
               </div>
             </div>
           </div>
         </div>
       </div>
 <script>window.PSYMED_ROLE="paciente";</script>
+<script>
+// Mood selector interactivo
+document.getElementById('mood-grid').addEventListener('click', function(e) {
+  var opt = e.target.closest('.psy-mood-option');
+  if (!opt) return;
+  document.querySelectorAll('.psy-mood-option').forEach(function(el) {
+    el.classList.remove('selected');
+    el.style.border = '1px solid #EFE6DE';
+    el.style.background = '';
+    el.querySelector('div:last-child').style.color = '#93857A';
+    el.querySelector('div:last-child').style.fontWeight = '400';
+  });
+  opt.classList.add('selected');
+  opt.style.border = '2px solid #D9803F';
+  opt.style.background = '#FBEEDE';
+  opt.querySelector('div:last-child').style.color = '#B4632A';
+  opt.querySelector('div:last-child').style.fontWeight = '700';
+});
+
+// Slider bg fill
+function updateSliderBg(slider) {
+  var val = (slider.value - slider.min) / (slider.max - slider.min) * 100;
+  slider.style.background = 'linear-gradient(to right, #D9803F ' + val + '%, #F0E7DF ' + val + '%)';
+}
+// Inicializar sliders
+['sl-hambre','sl-sueno','sl-energia','sl-hidrat'].forEach(function(id) {
+  updateSliderBg(document.getElementById(id));
+});
+</script>
 <script src="../psymed.js"></script>
 </body>
 </html>
