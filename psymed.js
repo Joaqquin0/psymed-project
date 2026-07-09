@@ -44,9 +44,9 @@
       'Asistente': 'asistente.html'
     },
     paciente: {
-      'Inicio':    'agenda.html',
+      'Agenda':    'agenda.html',
       'Mis Citas': 'citas.html',
-      'Terapia':   'citas.html'
+      'Terapia':   'reporte.html'
     }
   };
 
